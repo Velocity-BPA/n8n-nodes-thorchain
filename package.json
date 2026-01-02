@@ -1,0 +1,83 @@
+{
+  "name": "n8n-nodes-thorchain",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for THORChain providing 14 resources and 80+ operations for cross-chain DeFi swaps, liquidity pools, savers vaults, and lending. Includes real-time triggers and memo utilities.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-thorchain.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-thorchain#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-thorchain/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "thorchain",
+    "rune",
+    "defi",
+    "cross-chain",
+    "swap",
+    "liquidity",
+    "blockchain",
+    "cryptocurrency",
+    "bitcoin",
+    "ethereum",
+    "cosmos"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ThorchainApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/THORChain/THORChain.node.js",
+      "dist/nodes/THORChain/THORChainTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.22.0",
+    "prettier": "^3.2.2",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
